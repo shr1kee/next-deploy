@@ -75,7 +75,7 @@ const ActorForm = () => {
                 name="year"
                 placeholder="год"
                 type="number"
-                value={formData.year !== null ? formData.year.toString() : null}
+                value={formData.year !== null ? formData.year.toString() : undefined}
                 classNames={{
                     inputWrapper: "bg-default-100",
                     input: "text-sm focus:outline-none"

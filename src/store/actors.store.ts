@@ -26,7 +26,7 @@ export const useActorStore = create<IActorState>((set) => ({
                 set({error: result.error, isLoading: false});
             }
         } catch(error) {
-            set({error: error, isLoading: false});
+            set({error: "Error", isLoading: false});
         }
     },
     addActor: async (formData: FormData) => {
@@ -34,12 +34,13 @@ export const useActorStore = create<IActorState>((set) => ({
         try {
            const result = await createActor(formData);
            if (result.success) {
+               // @ts-ignore
                set((state) => ({actors: [...state.actors, result.actor], isLoading: false}));
            } else {
                set({error: result.error, isLoading: false});
            }
         } catch(error) {
-            set({error: error, isLoading: false});
+            set({error: "Error", isLoading: false});
         }
     },
     removeActor: async (id: string) => {
@@ -54,7 +55,7 @@ export const useActorStore = create<IActorState>((set) => ({
             }
 
         } catch(error) {
-            set({error: error, isLoading: false});
+            set({error: "Error", isLoading: false});
         }
     }
 }))

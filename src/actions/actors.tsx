@@ -16,7 +16,7 @@ export async function createActor(formData: FormData) {
         return {success: true, actor}
 
     } catch(error) {
-        return {success: false, error: error.message};
+        return {success: false, error: "Actor already exists"};
     }
 }
 
