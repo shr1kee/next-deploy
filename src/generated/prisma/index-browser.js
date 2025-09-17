@@ -128,6 +128,55 @@ exports.Prisma.UserScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.AccountScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  type: 'type',
+  provider: 'provider',
+  providerAccountId: 'providerAccountId',
+  refresh_token: 'refresh_token',
+  access_token: 'access_token',
+  expires_at: 'expires_at',
+  token_type: 'token_type',
+  scope: 'scope',
+  id_token: 'id_token',
+  session_state: 'session_state'
+};
+
+exports.Prisma.SessionScalarFieldEnum = {
+  id: 'id',
+  sessionToken: 'sessionToken',
+  userId: 'userId',
+  expires: 'expires'
+};
+
+exports.Prisma.VerificationTokenScalarFieldEnum = {
+  identifier: 'identifier',
+  token: 'token',
+  expires: 'expires'
+};
+
+exports.Prisma.ActorScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  category: 'category',
+  year: 'year',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.FilmScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  imageUrl: 'imageUrl'
+};
+
+exports.Prisma.FilmActorScalarFieldEnum = {
+  id: 'id',
+  filmId: 'filmId',
+  actorId: 'actorId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -138,9 +187,25 @@ exports.Prisma.QueryMode = {
   insensitive: 'insensitive'
 };
 
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
+};
+exports.Category = exports.$Enums.Category = {
+  DRAMA: 'DRAMA',
+  HORROR: 'HORROR',
+  THRILLER: 'THRILLER',
+  COMEDY: 'COMEDY'
+};
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Account: 'Account',
+  Session: 'Session',
+  VerificationToken: 'VerificationToken',
+  Actor: 'Actor',
+  Film: 'Film',
+  FilmActor: 'FilmActor'
 };
 
 /**
