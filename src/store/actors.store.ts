@@ -34,7 +34,7 @@ export const useActorStore = create<IActorState>((set) => ({
         try {
            const result = await createActor(formData);
            if (result.success) {
-               // @ts-ignore
+               // @ts-expect-error
                set((state) => ({actors: [...state.actors, result.actor], isLoading: false}));
            } else {
                set({error: result.error, isLoading: false});

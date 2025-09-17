@@ -41,7 +41,7 @@ export const useFilmStore = create<IFilmState>((set) => ({
         try {
             const result = await createFilm(formData);
             if(result.success) {
-                // @ts-ignore
+                // @ts-expect-error
                 set((state) => ({
                     films: [...state.films, result.film],
                     isLoading: false
@@ -61,7 +61,7 @@ export const useFilmStore = create<IFilmState>((set) => ({
         try {
             const result = await updateFilm(id, formData);
             if(result.success) {
-                // @ts-ignore
+                // @ts-expect-error
                 set((state) => ({
                     films: state.films.map((film) => film.id === id ? result.film : film),
                     isLoading: false
